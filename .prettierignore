@@ -1,0 +1,9 @@
+node_modules
+dist
+certs
+data
+pnpm-lock.yaml
+docs
+content
+README.md
+CLAUDE.md

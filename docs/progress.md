@@ -2,11 +2,11 @@
 
 Single source of truth for where the build is up to. Update at the end of every session.
 
-Last updated: 2026-10-27 (session 1: starter pack added, Step 1 planned)
+Last updated: 2026-10-27 (session 1: Step 1 scaffold done)
 
 ## Foundations
 
-- [ ] Step 1 - Scaffold
+- [x] Step 1 - Scaffold
 - [ ] Step 2 - Rooms, QR join and avatars
 - [ ] Step 3 - Engine runtime and reference game (`tap-race`)
 - [ ] Step 3b - The Show Package
@@ -100,5 +100,10 @@ Also in this phase:
 
 ## Notes for the next session
 
-- Starter pack committed on branch `claude/relaxed-pasteur-8irkob`.
-- Step 1 plan awaiting approval; no scaffold code written yet.
+- Next up: Step 2 - Rooms, QR join and avatars.
+- Step 1 built and checked in headless Chromium: `pnpm dev`, `pnpm test`, `pnpm typecheck`, `pnpm lint` and `pnpm build` all pass. Not yet tried on a real phone or the TV box (see `docs/known-issues.md`).
+- Dev layout: the server (port 8443, HTTPS) is the single front door. It proxies `/` to the TV Vite server (5173) and `/p/*` to the phone Vite server (5174, base `/p/`); `/join` and `/play` open the phone app. Production serves both built apps from the same port.
+- The self-signed cert comes from the `selfsigned` package (not `@vitejs/plugin-basic-ssl`), so server and Vite share one origin and one certificate warning.
+- `apps/android` is not created until Step 8; `pnpm android` just prints a message.
+- `pnpm bots` is a stub until Step 2.
+- Pinned TypeScript to 5.x because typescript-eslint does not support TS 7 yet.

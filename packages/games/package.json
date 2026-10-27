@@ -1,0 +1,15 @@
+{
+  "name": "@murley/games",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./logic": "./src/logic.ts",
+    "./tv": "./src/tv.ts",
+    "./phone": "./src/phone.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

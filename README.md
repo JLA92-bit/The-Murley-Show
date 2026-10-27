@@ -21,3 +21,19 @@ Everything Claude Code needs to build The Murley Show!, a private at-home party 
 2. Make a folder called `murley-show`, copy this pack into it, `git init`, commit.
 3. Run `claude` in the folder and paste Step 1 from `docs/00-build-order.md`.
 4. One step per session. Test on real phones and the TV box, commit, `/clear`, next step.
+
+## Running it (Step 1 scaffold)
+
+```
+pnpm install
+pnpm dev        # server + TV app + phone app, HTTPS on your local network
+pnpm test
+pnpm typecheck
+```
+
+`pnpm dev` prints the addresses. Open the first on the TV and the second on a phone (tap through the certificate warning once per device):
+
+- TV: `https://<your-LAN-IP>:8443/`
+- Phone: `https://<your-LAN-IP>:8443/join` (the QR code adds `?room=ABCD`)
+
+Copy `.env.example` to `.env` to change the port or `PUBLIC_URL`. The self-signed certificate is created automatically in `certs/` (git-ignored).

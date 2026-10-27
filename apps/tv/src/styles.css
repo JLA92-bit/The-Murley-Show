@@ -1,0 +1,15 @@
+@import '@fontsource/baloo-2/800.css';
+@import '@fontsource/bungee/400.css';
+@import '@fontsource/nunito/700.css';
+@import '@fontsource/nunito/800.css';
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: #ffffff;
+  font-family: Nunito, system-ui, sans-serif;
+  font-weight: 700;
+  color: #00294d;
+}
